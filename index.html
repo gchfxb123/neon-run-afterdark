@@ -1,131 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>NEON RUN: AFTERDARK</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-  <!-- 字体（成熟感） -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: #000;
-      font-family: 'Orbitron', sans-serif;
-      color: white;
-    }
-
-    canvas {
-      display: block;
-    }
-
-    /* HUD */
-    #hud {
-      position: fixed;
-      top: 12px;
-      left: 12px;
-      z-index: 10;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    #score {
-      font-size: 18px;
-      font-weight: 600;
-      color: #00eaff;
-    }
-
-    /* START SCREEN */
-    #startScreen {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at center, #0a0a0a 0%, #000 70%);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 20;
-      text-align: center;
-    }
-
-    #title {
-      font-size: 42px;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-      color: #00eaff;
-    }
-
-    #subtitle {
-      font-size: 14px;
-      opacity: 0.7;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      padding: 14px 32px;
-      border: 1px solid #00eaff;
-      background: transparent;
-      color: #00eaff;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #00eaff;
-      color: #000;
-    }
-
-    #controls {
-      position: fixed;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 12px;
-      opacity: 0.6;
-      z-index: 10;
-      text-align: center;
-    }
-
-    /* Mobile touch hint */
-    @media (max-width: 768px) {
-      #controls {
-        font-size: 11px;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Neon Run: Afterdark</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- HUD -->
-  <div id="hud">
-    SCORE<br>
-    <span id="score">0</span>
-  </div>
+<div id="hud">
+  SCORE: <span id="score">0</span>
+</div>
 
-  <!-- START SCREEN -->
-  <div id="startScreen">
-    <div id="title">NEON RUN</div>
-    <div id="subtitle">AFTERDARK</div>
-    <button class="btn" onclick="startGame()">START RUN</button>
-  </div>
+<button id="jumpBtn">JUMP</button>
 
-  <!-- Controls hint -->
-  <div id="controls">
-    Desktop: A / D move · Space jump · S slide<br>
-    Mobile: Swipe left / right · Tap jump · Swipe down slide
-  </div>
+<canvas id="game"></canvas>
 
-  <!-- Three.js -->
-  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
-
-  <!-- Game code -->
-  <script src="main.js"></script>
-
+<script src="main.js"></script>
 </body>
 </html>
